@@ -43,60 +43,98 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
-      .drawer-list {
-        margin: 0 20px;
+      .card {
+        width: calc(100% - 48px);
+        margin: 24px;
       }
-      .drawer-list a {
-        display: block;
-        padding: 0 16px;
-        line-height: 40px;
-        text-decoration: none;
-        color: var(--app-secondary-color);
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
       }
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
+
+      @media (min-width: 800px) {
+      .card {
+        width: calc(49% - 48px);
+        vertical-align: top;
       }
-      .drawer-list a.subroute {
-        padding-left: 32px;
-      }
+    }
+
 
 
     </style>
 
-    <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+    <!-- Main content -->
 
-    <app-drawer-layout fullbleed>
+    <app-header-layout>
 
-      <!-- Drawer content -->
-      <app-drawer>
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">View One</a>
-        </iron-selector>
-      </app-drawer>
+      <app-header fixed condenses effects="waterfall">
+        <app-toolbar>
+          <div title>Curriculum Vitae</div>
+        </app-toolbar>
+        <app-toolbar></app-toolbar>
+        <app-toolbar>
+          <div title>Jacques de Klerk</div>
+        </app-toolbar>
+      </app-header>
 
-      <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+      <div class="container">
+        <paper-card heading="Profile" class="card">
+          <div class="card-content">
+            <ul>
+              <li>8 years experience</li>
+              <li>Self-taught</li>
+              <li>Focusing on front-end/client-side</li>
+              <li>Currently working on a freelance basis</li>
+              <li>Have worked on various diverse projects with involvement in all aspects, form conceptualisation and deployment to support</li>
+            </ul>
+          </div>
+        </paper-card>
 
-        <app-header condenses reveals effects="waterfall">
-          <app-toolbar>
-            <div title>Jacques de Klerk</div>
-          </app-toolbar>
-        </app-header>
+        <paper-card heading="Objective" class="card">
+          <div class="card-content">
+            Seeking a new challenge where I can learn from and contribute to a
+            team environment within a dynamic organisation. My passion for
+            learning means that I can continually offer the latest technology,
+            practices and ideas to the team, ensuring the organisation is at the
+            very forefront of customer experiences.
+          </div>
+        </paper-card>
 
-        <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
-          <my-view1 name="view1"></my-view1>
-        </iron-pages>
 
-      </app-header-layout>
+        <paper-card heading="Experience" class="card">
+          <div class="card-content">
+            Freelance Web Developer:
 
-    </app-drawer-layout>
+            2007 - 2013
+
+            Responsibilities:
+
+            <ul>
+              <li>Development of Websites, Flex Applications, Blogs</li>
+              <li>Hosting Setup</li>
+              <li>Support</li>
+            </ul>
+
+
+            Skills acquired:
+
+            • Self-education in web technologies
+
+            • Independent operation
+
+            • Corresponding with clients
+
+            • Project management
+
+            • Working with deadlines
+          </div>
+        </paper-card>
+      </div>
+
+
+
+    </app-header-layout>
 
   </template>
 

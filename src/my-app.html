@@ -21,6 +21,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../bower_components/paper-progress/paper-progress.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="my-icons.html">
 
 <dom-module id="my-app">
@@ -31,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       :host {
         display: block;
-        --app-primary-color: #4285f4;
+        --app-primary-color: #00BCD4;
         --app-secondary-color: black;
       }
 
@@ -43,6 +48,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
+
+      app-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 440px;
+        color: #fff;
+        background-image: url(//app-layout-assets.appspot.com/assets/bg3.jpg);
+        background-position: bottom center;
+        background-size: cover;
+
+        --app-header-background-front-layer: {
+          background: -webkit-linear-gradient(top, transparent 0%, transparent 50%, rgba(0,0,0,0.5) 100%);
+        };
+
+        --app-header-background-rear-layer: {
+          background-color: #303f9f;
+        };
+      }
+
       .card {
         width: calc(100% - 48px);
         margin: 24px;
@@ -51,6 +77,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .container {
         max-width: 1200px;
         margin: auto;
+      }
+
+      paper-progress {
+        margin: 20px 0;
+        width: 100%;
+      }
+
+      paper-progress.blue {
+        --paper-progress-active-color: var(--paper-light-blue-500);
+        --paper-progress-secondary-color: var(--paper-light-blue-100);
+      }
+
+      paper-progress.red {
+        --paper-progress-active-color: var(--paper-red-500);
+        --paper-progress-secondary-color: var(--paper-red-100);
+      }
+
+      paper-progress.green {
+        --paper-progress-active-color: var(--paper-light-green-500);
+        --paper-progress-secondary-color: var(--paper-light-green-100);
       }
 
       @media (min-width: 800px) {
@@ -68,14 +114,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <app-header-layout>
 
-      <app-header fixed condenses effects="waterfall">
+      <!-- <app-header style="height: 196px;" condenses fixed>
+        <app-toolbar></app-toolbar>
+        <app-toolbar primary style="height: 64px;">
+          <div title>App name</div>
+        </app-toolbar>
+      </app-header> -->
+
+      <!-- <app-header fixed condenses effects="waterfall resize-snapped-title">
         <app-toolbar>
           <div title>Curriculum Vitae</div>
         </app-toolbar>
         <app-toolbar></app-toolbar>
-        <app-toolbar>
+        <app-toolbar primary>
           <div title>Jacques de Klerk</div>
         </app-toolbar>
+        <paper-fab icon="print" title="print" class="blue"></paper-fab>
+      </app-header> -->
+
+      <app-header condenses fixed
+          effects="waterfall resize-snapped-title fade-background"
+          effects-config='{"resize-snapped-title": {"startsAt": 0.8, "duration": "100ms"}, "fade-background": {"startsAt": 0.8, "endsAt": 0.9}}'>
+        <app-toolbar>
+          <h4 condensed-title>Jacques de Klerk</h4>
+        </app-toolbar>
+        <h1 title>Jacques de Klerk</h1>
       </app-header>
 
       <div class="container">
@@ -103,33 +166,117 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
         <paper-card heading="Experience" class="card">
+
+
+            <paper-listbox>
+              <paper-item>
+                <paper-icon-item>
+                </paper-icon-item>
+                  <i>September 2013 - Present</i>
+                <paper-item-body>
+                  Front-end Developer (Origin Interactive):
+
+                  Responsibilities:
+                  <ul>
+                    <li>Development of Websites, Flex Applications, Blogs</li>
+                    <li>Hosting Setup</li>
+                    <li>Support</li>
+                  </ul>
+
+                  Skills acquired:
+                  <ul>
+                    <li>
+                      Self-education in web technologies
+                    </li>
+                    <li>
+                      Independent operation
+                    </li>
+                    <li>
+                      Corresponding with clients
+                    </li>
+                    <li>
+                      Project management
+                    </li>
+                    <li>
+                      Working with deadlines
+                    </li>
+                  </ul>
+                </paper-item-body>
+              </paper-item>
+
+              <paper-item>
+                <paper-icon-item>
+                </paper-icon-item>
+                  2007 - 2013
+                <paper-item-body>
+                  Web Developer (Freelance):
+
+                  Responsibilities:
+                  <ul>
+                    <li>Development of Websites, Flex Applications, Blogs</li>
+                    <li>Hosting Setup</li>
+                    <li>Support</li>
+                  </ul>
+
+                  Skills acquired:
+                  <ul>
+                    <li>
+                      Self-education in web technologies
+                    </li>
+                    <li>
+                      Independent operation
+                    </li>
+                    <li>
+                      Corresponding with clients
+                    </li>
+                    <li>
+                      Project management
+                    </li>
+                    <li>
+                      Working with deadlines
+                    </li>
+                  </ul>
+                </paper-item-body>
+              </paper-item>
+
+
+            </paper-listbox>
+        </paper-card>
+
+
+
+
+        <paper-card heading="Skills" class="card">
           <div class="card-content">
-            Freelance Web Developer:
-
-            2007 - 2013
-
-            Responsibilities:
-
-            <ul>
-              <li>Development of Websites, Flex Applications, Blogs</li>
-              <li>Hosting Setup</li>
-              <li>Support</li>
-            </ul>
-
-
-            Skills acquired:
-
-            • Self-education in web technologies
-
-            • Independent operation
-
-            • Corresponding with clients
-
-            • Project management
-
-            • Working with deadlines
+            <p>
+              JavaScript
+            </p>
+            <paper-progress value="800" min="100" max="1000" class="red"></paper-progress>
+            <p>
+              JavaScript
+            </p>
+            <paper-progress value="600" min="100" max="1000" class="green"></paper-progress>
+            <p>
+              JavaScript
+            </p>
+            <paper-progress value="400" min="100" max="1000"  class="blue"></paper-progress>
           </div>
         </paper-card>
+
+
+        <!-- EDUCATION -->
+        <paper-card heading="Education" class="card">
+          <paper-listbox>
+            <paper-item>
+              B.Sc (Computer Science) - UNISA - 2015 - Present
+            </paper-item>
+            <paper-item>
+              B.Com (Marketing Management) - University of Pretoria - 2006
+            </paper-item>
+
+          </paper-listbox>
+        </paper-card>
+
       </div>
 
 

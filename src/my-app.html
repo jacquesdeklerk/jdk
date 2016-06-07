@@ -23,9 +23,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
 <link rel="import" href="../bower_components/paper-slider/paper-slider.html">
 <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="paper-chip.html">
 <link rel="import" href="my-icons.html">
 
 <dom-module id="my-app">
@@ -48,25 +51,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
-
-      app-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 440px;
-        color: #fff;
-        background-image: url(//app-layout-assets.appspot.com/assets/bg3.jpg);
-        background-position: bottom center;
-        background-size: cover;
-
-        --app-header-background-front-layer: {
-          background: -webkit-linear-gradient(top, transparent 0%, transparent 50%, rgba(0,0,0,0.5) 100%);
-        };
-
-        --app-header-background-rear-layer: {
-          background-color: #303f9f;
-        };
+      .fab--header {
+        position: absolute;
+        right: 20px;
+        bottom: -28px;
+        z-index: 99;
+        background: #fff;
+        color: #00BCD4;
       }
 
       .card {
@@ -75,16 +66,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .container {
+        width: 100%;
         max-width: 1200px;
         margin: auto;
+      }
+
+      .container--pad {
+        padding: 0 20px;
+        box-sizing: border-box;
       }
 
       paper-progress {
         margin: 20px 0;
         width: 100%;
+        --paper-progress-active-color: #00BCD4;
       }
 
-      paper-progress.blue {
+      /*paper-progress.blue {
         --paper-progress-active-color: var(--paper-light-blue-500);
         --paper-progress-secondary-color: var(--paper-light-blue-100);
       }
@@ -97,6 +95,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-progress.green {
         --paper-progress-active-color: var(--paper-light-green-500);
         --paper-progress-secondary-color: var(--paper-light-green-100);
+      }*/
+
+      .cardlist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .cardlist__item {
+        padding: 16px;
+      }
+
+      .cardlist__item:not(:last-child) {
+        border-bottom: 1px solid #eee;
       }
 
       @media (min-width: 800px) {
@@ -114,34 +126,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <app-header-layout>
 
-      <!-- <app-header style="height: 196px;" condenses fixed>
-        <app-toolbar></app-toolbar>
-        <app-toolbar primary style="height: 64px;">
-          <div title>App name</div>
-        </app-toolbar>
-      </app-header> -->
-
-      <!-- <app-header fixed condenses effects="waterfall resize-snapped-title">
-        <app-toolbar>
-          <div title>Curriculum Vitae</div>
-        </app-toolbar>
-        <app-toolbar></app-toolbar>
+      <app-header condenses fixed effects="resize-title waterfall">
         <app-toolbar primary>
-          <div title>Jacques de Klerk</div>
+            <h4 condensed-title>Jacques de Klerk</h4>
         </app-toolbar>
-        <paper-fab icon="print" title="print" class="blue"></paper-fab>
-      </app-header> -->
-
-      <app-header condenses fixed
-          effects="waterfall resize-snapped-title fade-background"
-          effects-config='{"resize-snapped-title": {"startsAt": 0.8, "duration": "100ms"}, "fade-background": {"startsAt": 0.8, "endsAt": 0.9}}'>
         <app-toolbar>
-          <h4 condensed-title>Jacques de Klerk</h4>
+          <div class="container container--pad">
+            Curriculum Vitae
+          </div>
         </app-toolbar>
-        <h1 title>Jacques de Klerk</h1>
+        <app-toolbar>
+          <paper-icon-item>
+            <iron-icon icon="email" item-icon>
+            </iron-icon>
+            <paper-item-body>
+              <div>jacques.de.klerk@gmail.com</div>
+            </paper-item-body>
+          </paper-icon-item>
+        </app-toolbar>
+        <app-toolbar>
+          <div class="container container--pad">
+            <h1 title>Jacques de Klerk</h1>
+          </div>
+        </app-toolbar>
+        <app-toolbar>
+        </app-toolbar>
+        <paper-fab icon="print" title="print" class="fab--header"></paper-fab>
       </app-header>
 
-      <div class="container">
+      <div class="container" style="margin-top:20px">
         <paper-card heading="Profile" class="card">
           <div class="card-content">
             <ul>
@@ -164,83 +177,71 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </paper-card>
 
-
+        <!-- EXPERIENCE -->
         <paper-card heading="Experience" class="card">
+          <ul class="cardlist">
+              <li class="cardlist__item">
+                <h4><i>September 2013 - Present</i></h4>
+                <h4>Front-end Developer (Origin Interactive)</h4>
 
+                Responsibilities:
+                <ul>
+                  <li>Development of Websites, Flex Applications, Blogs</li>
+                  <li>Hosting Setup</li>
+                  <li>Support</li>
+                </ul>
 
-            <paper-listbox>
-              <paper-item>
-                <paper-icon-item>
-                </paper-icon-item>
-                  <i>September 2013 - Present</i>
-                <paper-item-body>
-                  Front-end Developer (Origin Interactive):
+                Skills acquired:
+                <ul>
+                  <li>
+                    Self-education in web technologies
+                  </li>
+                  <li>
+                    Independent operation
+                  </li>
+                  <li>
+                    Corresponding with clients
+                  </li>
+                  <li>
+                    Project management
+                  </li>
+                  <li>
+                    Working with deadlines
+                  </li>
+                </ul>
+              </li>
 
-                  Responsibilities:
-                  <ul>
-                    <li>Development of Websites, Flex Applications, Blogs</li>
-                    <li>Hosting Setup</li>
-                    <li>Support</li>
-                  </ul>
+              <li class="cardlist__item">
+                <h4><i>2007 - 2013</i></h4>
+                <h4>Web Developer (Freelance)</h4>
 
-                  Skills acquired:
-                  <ul>
-                    <li>
-                      Self-education in web technologies
-                    </li>
-                    <li>
-                      Independent operation
-                    </li>
-                    <li>
-                      Corresponding with clients
-                    </li>
-                    <li>
-                      Project management
-                    </li>
-                    <li>
-                      Working with deadlines
-                    </li>
-                  </ul>
-                </paper-item-body>
-              </paper-item>
+                Responsibilities:
+                <ul>
+                  <li>Development of Websites, Flex Applications, Blogs</li>
+                  <li>Hosting Setup</li>
+                  <li>Support</li>
+                </ul>
 
-              <paper-item>
-                <paper-icon-item>
-                </paper-icon-item>
-                  2007 - 2013
-                <paper-item-body>
-                  Web Developer (Freelance):
-
-                  Responsibilities:
-                  <ul>
-                    <li>Development of Websites, Flex Applications, Blogs</li>
-                    <li>Hosting Setup</li>
-                    <li>Support</li>
-                  </ul>
-
-                  Skills acquired:
-                  <ul>
-                    <li>
-                      Self-education in web technologies
-                    </li>
-                    <li>
-                      Independent operation
-                    </li>
-                    <li>
-                      Corresponding with clients
-                    </li>
-                    <li>
-                      Project management
-                    </li>
-                    <li>
-                      Working with deadlines
-                    </li>
-                  </ul>
-                </paper-item-body>
-              </paper-item>
-
-
-            </paper-listbox>
+                Skills acquired:
+                <ul>
+                  <li>
+                    Self-education in web technologies
+                  </li>
+                  <li>
+                    Independent operation
+                  </li>
+                  <li>
+                    Corresponding with clients
+                  </li>
+                  <li>
+                    Project management
+                  </li>
+                  <li>
+                    Working with deadlines
+                  </li>
+                </ul>
+              </li>
+            </ul>
         </paper-card>
 
 
@@ -248,18 +249,71 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <paper-card heading="Skills" class="card">
           <div class="card-content">
-            <p>
-              JavaScript
-            </p>
-            <paper-progress value="800" min="100" max="1000" class="red"></paper-progress>
-            <p>
-              JavaScript
-            </p>
-            <paper-progress value="600" min="100" max="1000" class="green"></paper-progress>
-            <p>
-              JavaScript
-            </p>
-            <paper-progress value="400" min="100" max="1000"  class="blue"></paper-progress>
+            <div>
+              <p>
+                JavaScript
+              </p>
+              <paper-progress value="800" min="100" max="1000" class="red"></paper-progress>
+              <paper-chip label="Angular.js">
+              </paper-chip>
+              <paper-chip label="jQuery">
+              </paper-chip>
+              <paper-chip label="Node.js">
+              </paper-chip>
+              <paper-chip label="ES2015">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                CSS
+              </p>
+              <paper-progress value="980" min="100" max="1000" class="green"></paper-progress>
+              <paper-chip label="SASS/SCSS">
+              </paper-chip>
+              <paper-chip label="LESS">
+              </paper-chip>
+            </div>
+
+            <!-- <div>
+              <p>
+                HTML
+              </p>
+              <paper-progress value="999" min="100" max="1000"  class="blue"></paper-progress>
+              <paper-chip label="??">
+              </paper-chip>
+            </div> -->
+
+            <div>
+              <p>
+                PHP
+              </p>
+              <paper-progress value="700" min="100" max="1000"  class="blue"></paper-progress>
+              <paper-chip label="Laravel">
+              </paper-chip>
+              <paper-chip label="Wordpress">
+              </paper-chip>
+              <paper-chip label="Drupal">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                Relational Databases
+              </p>
+              <paper-progress value="700" min="100" max="1000"></paper-progress>
+              <paper-chip label="MySQL">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                NoSQL Databases
+              </p>
+              <paper-progress value="700" min="100" max="1000"></paper-progress>
+              <paper-chip label="MongoDB">
+              </paper-chip>
+            </div>
           </div>
         </paper-card>
 
@@ -275,6 +329,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
 
           </paper-listbox>
+        </paper-card>
+
+
+        <!-- REFERENCES -->
+        <paper-card heading="References" class="card">
+          <div class="card-content">
+            Available on request
+          </div>
+        </paper-card>
+
+
+        <!-- CONTACT -->
+        <paper-card heading="Contact" class="card">
+          <div class="card-content">
+
+            <paper-listbox>
+
+              <paper-icon-item>
+                <iron-icon icon="phone" item-icon>
+                </iron-icon>
+                <paper-item-body two-line>
+                  <div>(082) 811-5545</div>
+                  <div secondary>Mobile</div>
+                </paper-item-body>
+              </paper-icon-item>
+
+              <paper-icon-item>
+                <iron-icon icon="email" item-icon>
+                </iron-icon>
+                <paper-item-body>
+                  <div>jacques.de.klerk@gmail.com</div>
+                </paper-item-body>
+              </paper-icon-item>
+            </paper-listbox>
+
+          </div>
         </paper-card>
 
       </div>

@@ -10,8 +10,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/app-route/app-location.html">
 <link rel="import" href="../bower_components/app-route/app-route.html">
-<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
-<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
@@ -30,6 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="paper-chip.html">
 <link rel="import" href="my-icons.html">
+<link rel="import" href="my-view1.html">
 
 <dom-module id="my-app">
 
@@ -60,64 +59,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: #00BCD4;
       }
 
-      .card {
-        width: calc(100% - 48px);
-        margin: 24px;
+      @media print {
+        body {
+          font-size: 10pt;
+          color: red;
+        }
+
+        .fab--header {
+          display: none;
+        }
       }
-
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-      }
-
-      .container--pad {
-        padding: 0 20px;
-        box-sizing: border-box;
-      }
-
-      paper-progress {
-        margin: 20px 0;
-        width: 100%;
-        --paper-progress-active-color: #00BCD4;
-      }
-
-      /*paper-progress.blue {
-        --paper-progress-active-color: var(--paper-light-blue-500);
-        --paper-progress-secondary-color: var(--paper-light-blue-100);
-      }
-
-      paper-progress.red {
-        --paper-progress-active-color: var(--paper-red-500);
-        --paper-progress-secondary-color: var(--paper-red-100);
-      }
-
-      paper-progress.green {
-        --paper-progress-active-color: var(--paper-light-green-500);
-        --paper-progress-secondary-color: var(--paper-light-green-100);
-      }*/
-
-      .cardlist {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .cardlist__item {
-        padding: 16px;
-      }
-
-      .cardlist__item:not(:last-child) {
-        border-bottom: 1px solid #eee;
-      }
-
-      @media (min-width: 800px) {
-      .card {
-        width: calc(49% - 48px);
-        vertical-align: top;
-      }
-    }
-
 
 
     </style>
@@ -144,6 +95,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </app-toolbar>
         <app-toolbar>
         </app-toolbar>
+
+        <paper-fab icon="print" title="print" class="fab--header" on-tap="print"></paper-fab>
+      </app-header>
+
+      <app-header>
         <app-toolbar>
           <paper-icon-item>
             <iron-icon icon="email" item-icon>
@@ -160,225 +116,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item-body>
           </paper-icon-item>
         </app-toolbar>
-        <paper-fab icon="print" title="print" class="fab--header" href="javascript:window.print()" on-tap="print"></paper-fab>
       </app-header>
 
-      <div class="container" style="margin-top:20px">
-        <paper-card heading="Profile" class="card">
-          <div class="card-content">
-            <ul>
-              <li>8 years experience</li>
-              <li>Self-taught</li>
-              <li>Focusing on front-end/client-side</li>
-              <li>Currently working on a freelance basis</li>
-              <li>Have worked on various diverse projects with involvement in all aspects, form conceptualisation and deployment to support</li>
-            </ul>
-          </div>
-        </paper-card>
-
-        <paper-card heading="Objective" class="card">
-          <div class="card-content">
-            Seeking a new challenge where I can learn from and contribute to a
-            team environment within a dynamic organisation. My passion for
-            learning means that I can continually offer the latest technology,
-            practices and ideas to the team, ensuring the organisation is at the
-            very forefront of customer experiences.
-          </div>
-        </paper-card>
-
-        <!-- EXPERIENCE -->
-        <paper-card heading="Experience" class="card">
-          <ul class="cardlist">
-              <li class="cardlist__item">
-                <h4><i>September 2013 - Present</i></h4>
-                <h4>Front-end Developer (Origin Interactive)</h4>
-
-                Responsibilities:
-                <ul>
-                  <li>Development of Websites, Flex Applications, Blogs</li>
-                  <li>Hosting Setup</li>
-                  <li>Support</li>
-                </ul>
-
-                Skills acquired:
-                <ul>
-                  <li>
-                    Self-education in web technologies
-                  </li>
-                  <li>
-                    Independent operation
-                  </li>
-                  <li>
-                    Corresponding with clients
-                  </li>
-                  <li>
-                    Project management
-                  </li>
-                  <li>
-                    Working with deadlines
-                  </li>
-                </ul>
-              </li>
-
-              <li class="cardlist__item">
-                <h4><i>2007 - 2013</i></h4>
-                <h4>Web Developer (Freelance)</h4>
-
-                Responsibilities:
-                <ul>
-                  <li>Development of Websites, Flex Applications, Blogs</li>
-                  <li>Hosting Setup</li>
-                  <li>Support</li>
-                </ul>
-
-                Skills acquired:
-                <ul>
-                  <li>
-                    Self-education in web technologies
-                  </li>
-                  <li>
-                    Independent operation
-                  </li>
-                  <li>
-                    Corresponding with clients
-                  </li>
-                  <li>
-                    Project management
-                  </li>
-                  <li>
-                    Working with deadlines
-                  </li>
-                </ul>
-              </li>
-            </ul>
-        </paper-card>
-
-
-
-
-        <paper-card heading="Skills" class="card">
-          <div class="card-content">
-            <div>
-              <p>
-                JavaScript
-              </p>
-              <paper-progress value="800" min="100" max="1000" class="red"></paper-progress>
-              <paper-chip label="Angular.js">
-              </paper-chip>
-              <paper-chip label="jQuery">
-              </paper-chip>
-              <paper-chip label="Node.js">
-              </paper-chip>
-              <paper-chip label="ES2015">
-              </paper-chip>
-            </div>
-
-            <div>
-              <p>
-                CSS
-              </p>
-              <paper-progress value="980" min="100" max="1000" class="green"></paper-progress>
-              <paper-chip label="SASS/SCSS">
-              </paper-chip>
-              <paper-chip label="LESS">
-              </paper-chip>
-            </div>
-
-            <!-- <div>
-              <p>
-                HTML
-              </p>
-              <paper-progress value="999" min="100" max="1000"  class="blue"></paper-progress>
-              <paper-chip label="??">
-              </paper-chip>
-            </div> -->
-
-            <div>
-              <p>
-                PHP
-              </p>
-              <paper-progress value="700" min="100" max="1000"  class="blue"></paper-progress>
-              <paper-chip label="Laravel">
-              </paper-chip>
-              <paper-chip label="Wordpress">
-              </paper-chip>
-              <paper-chip label="Drupal">
-              </paper-chip>
-            </div>
-
-            <div>
-              <p>
-                Relational Databases
-              </p>
-              <paper-progress value="700" min="100" max="1000"></paper-progress>
-              <paper-chip label="MySQL">
-              </paper-chip>
-            </div>
-
-            <div>
-              <p>
-                NoSQL Databases
-              </p>
-              <paper-progress value="700" min="100" max="1000"></paper-progress>
-              <paper-chip label="MongoDB">
-              </paper-chip>
-            </div>
-          </div>
-        </paper-card>
-
-
-        <!-- EDUCATION -->
-        <paper-card heading="Education" class="card">
-          <paper-listbox>
-            <paper-item>
-              B.Sc (Computer Science) - UNISA - 2015 - Present
-            </paper-item>
-            <paper-item>
-              B.Com (Marketing Management) - University of Pretoria - 2006
-            </paper-item>
-
-          </paper-listbox>
-        </paper-card>
-
-
-        <!-- REFERENCES -->
-        <paper-card heading="References" class="card">
-          <div class="card-content">
-            Available on request
-          </div>
-        </paper-card>
-
-
-        <!-- CONTACT -->
-        <paper-card heading="Contact" class="card">
-          <div class="card-content">
-
-            <paper-listbox>
-
-              <paper-icon-item>
-                <iron-icon icon="phone" item-icon>
-                </iron-icon>
-                <paper-item-body two-line>
-                  <div>(082) 811-5545</div>
-                  <div secondary>Mobile</div>
-                </paper-item-body>
-              </paper-icon-item>
-
-              <paper-icon-item>
-                <iron-icon icon="email" item-icon>
-                </iron-icon>
-                <paper-item-body>
-                  <div>jacques.de.klerk@gmail.com</div>
-                </paper-item-body>
-              </paper-icon-item>
-            </paper-listbox>
-
-          </div>
-        </paper-card>
-
-      </div>
-
-
+      <my-view1></my-view1>
 
     </app-header-layout>
 
@@ -404,19 +144,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         '_routePageChanged(routeData.page)'
       ],
 
-      // listeners: {
-      //   'tap': 'regularTap',
-      //   'special.tap': 'specialTap'
-      // },
-      //
-      // regularTap: function(e) {
-      //   alert('Thank you for tapping');
-      // },
-      //
-      // specialTap: function(e) {
-      //   alert('It was special tapping');
-      // },
-
       print: function() {
         window.print()
       },
@@ -432,11 +159,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     });
-
-
-    // document.querySelector('.fab--header').addEventListener('click', function() {
-    //   console.log('print');
-    // });
 
   </script>
 

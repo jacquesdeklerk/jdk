@@ -6,6 +6,7 @@ var buildControl = require('build-control').BuildControl;
 
 var bc = new buildControl({
   branch: 'dist',
+  dir: './build/bundled',
   remote: {
    repo: 'git@github.com:jacquesdeklerk/jacquesdeklerk.github.io.git',
    branch: 'master'

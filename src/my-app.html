@@ -60,12 +60,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       @media print {
-        body {
-          font-size: 10pt;
-          color: red;
+        app-header {
+          position: absolute;
         }
 
         .fab--header {
+          display: none;
+        }
+
+        .no-print {
           display: none;
         }
       }
@@ -86,36 +89,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             Curriculum Vitae
           </div>
         </app-toolbar>
-        <app-toolbar>
+        <app-toolbar class="no-print">
         </app-toolbar>
         <app-toolbar>
           <div class="container container--pad">
             <h1 title>Jacques de Klerk</h1>
           </div>
         </app-toolbar>
-        <app-toolbar>
+        <app-toolbar class="no-print">
         </app-toolbar>
 
-        <paper-fab icon="print" title="print" class="fab--header" on-tap="print"></paper-fab>
-      </app-header>
-
-      <app-header>
-        <app-toolbar>
-          <paper-icon-item>
-            <iron-icon icon="email" item-icon>
-            </iron-icon>
-            <paper-item-body>
-              <div>jacques.de.klerk@gmail.com</div>
-            </paper-item-body>
-          </paper-icon-item>
-          <paper-icon-item>
-            <iron-icon icon="phone" item-icon>
-            </iron-icon>
-            <paper-item-body>
-              <div>0828115545</div>
-            </paper-item-body>
-          </paper-icon-item>
-        </app-toolbar>
+        <paper-fab icon="print" title="print" class="fab--header no-print" on-tap="print"></paper-fab>
       </app-header>
 
       <my-view1></my-view1>

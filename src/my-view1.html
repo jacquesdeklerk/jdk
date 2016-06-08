@@ -22,6 +22,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         width: 100%;
         max-width: 1200px;
         margin: auto;
+        text-align: center;
       }
 
       .container--pad {
@@ -31,9 +32,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .card {
         width: calc(100% - 48px);
-        margin: 24px;
+        margin: 16px;
+        text-align: left;
       }
 
+      /*.card ul {
+        margin: 0;
+        padding: 20px;
+      }*/
 
 
       paper-progress {
@@ -77,8 +83,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           vertical-align: top;
         }
       }
+
+      @media print {
+        :host {
+          font-size: 9pt;
+        }
+
+        .card {
+          width: calc(49% - 48px);
+          vertical-align: top;
+          box-shadow: none;
+          border: 1px solid #eee;
+        }
+      }
     </style>
 
+    <app-header>
+      <app-toolbar>
+        <paper-icon-item>
+          <iron-icon icon="email" item-icon>
+          </iron-icon>
+          <paper-item-body>
+            <div>jacques.de.klerk@gmail.com</div>
+          </paper-item-body>
+        </paper-icon-item>
+        <paper-icon-item>
+          <iron-icon icon="phone" item-icon>
+          </iron-icon>
+          <paper-item-body>
+            <div>0828115545</div>
+          </paper-item-body>
+        </paper-icon-item>
+      </app-toolbar>
+    </app-header>
 
     <div class="container" style="margin-top:20px">
 
@@ -87,9 +124,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <ul>
             <li>8 years experience</li>
             <li>Self-taught</li>
-            <li>Focusing on front-end/client-side</li>
-            <li>Currently working on a freelance basis</li>
-            <li>Have worked on various diverse projects with involvement in all aspects, form conceptualisation and deployment to support</li>
+            <li>Specialising in front-end development</li>
+            <li>Currently completing Bsc Computer Science degree (2nd year)</li>
+            <li>Have worked on various diverse projects with involvement in all aspects, from conceptualisation and deployment to support</li>
           </ul>
         </div>
       </paper-card>
@@ -112,68 +149,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- EXPERIENCE -->
       <paper-card heading="Experience" class="card">
         <ul class="cardlist">
-            <li class="cardlist__item">
-              <h4><i>September 2013 - Present</i></h4>
-              <h4>Front-end Developer (Origin Interactive)</h4>
+          <li class="cardlist__item">
+            <h4><i>September 2013 - Present</i></h4>
+            <h4>Front-end Developer (Origin Interactive)</h4>
 
+            <p>
               Responsibilities:
               <ul>
-                <li>Development of Websites, Flex Applications, Blogs</li>
-                <li>Hosting Setup</li>
-                <li>Support</li>
+                <li>Lead Developer</li>
+                <li>Technical analysis of project scopes</li>
+                <li>Linux administation</li>
+                <li>Client support</li>
               </ul>
+            </p>
 
+            <p>
               Skills acquired:
               <ul>
                 <li>
-                  Self-education in web technologies
-                </li>
-                <li>
-                  Independent operation
-                </li>
-                <li>
-                  Corresponding with clients
-                </li>
-                <li>
-                  Project management
-                </li>
-                <li>
-                  Working with deadlines
+                  Analytical holistic focus
                 </li>
               </ul>
-            </li>
+            </p>
+          </li>
 
             <li class="cardlist__item">
               <h4><i>2007 - 2013</i></h4>
               <h4>Web Developer (Freelance)</h4>
-
-              Responsibilities:
-              <ul>
-                <li>Development of Websites, Flex Applications, Blogs</li>
-                <li>Hosting Setup</li>
-                <li>Support</li>
-              </ul>
-
-              Skills acquired:
-              <ul>
-                <li>
-                  Self-education in web technologies
-                </li>
-                <li>
-                  Independent operation
-                </li>
-                <li>
-                  Corresponding with clients
-                </li>
-                <li>
-                  Project management
-                </li>
-                <li>
-                  Working with deadlines
-                </li>
-              </ul>
-            </li>
-          </ul>
+              <p>
+                Responsibilities:
+                <ul>
+                  <li>Development of Websites, Flex Applications, Blogs</li>
+                  <li>Hosting Setup</li>
+                  <li>Support</li>
+                </ul>
+              </p>
+              <p>
+                Skills acquired:
+                <ul>
+                  <li>
+                    Self-education in web technologies
+                  </li>
+                  <li>
+                    Independent operation
+                  </li>
+                  <li>
+                    Corresponding with clients
+                  </li>
+                  <li>
+                    Project management
+                  </li>
+                  <li>
+                    Working with deadlines
+                  </li>
+                </ul>
+              </p>
+              </li>
+            </ul>
       </paper-card>
 
 

@@ -136,13 +136,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </app-toolbar>
         <app-toolbar>
-          <paper-icon-item>
-            <iron-icon icon="email" item-icon>
-            </iron-icon>
-            <paper-item-body>
-              <div>jacques.de.klerk@gmail.com</div>
-            </paper-item-body>
-          </paper-icon-item>
         </app-toolbar>
         <app-toolbar>
           <div class="container container--pad">
@@ -151,7 +144,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </app-toolbar>
         <app-toolbar>
         </app-toolbar>
-        <paper-fab icon="print" title="print" class="fab--header"></paper-fab>
+        <app-toolbar>
+          <paper-icon-item>
+            <iron-icon icon="email" item-icon>
+            </iron-icon>
+            <paper-item-body>
+              <div>jacques.de.klerk@gmail.com</div>
+            </paper-item-body>
+          </paper-icon-item>
+          <paper-icon-item>
+            <iron-icon icon="phone" item-icon>
+            </iron-icon>
+            <paper-item-body>
+              <div>0828115545</div>
+            </paper-item-body>
+          </paper-icon-item>
+        </app-toolbar>
+        <paper-fab icon="print" title="print" class="fab--header" href="javascript:window.print()" on-tap="print"></paper-fab>
       </app-header>
 
       <div class="container" style="margin-top:20px">
@@ -395,6 +404,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         '_routePageChanged(routeData.page)'
       ],
 
+      // listeners: {
+      //   'tap': 'regularTap',
+      //   'special.tap': 'specialTap'
+      // },
+      //
+      // regularTap: function(e) {
+      //   alert('Thank you for tapping');
+      // },
+      //
+      // specialTap: function(e) {
+      //   alert('It was special tapping');
+      // },
+
+      print: function() {
+        window.print()
+      },
+
       _routePageChanged: function(page) {
         this.page = page || 'view1';
       },
@@ -406,6 +432,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     });
+
+
+    // document.querySelector('.fab--header').addEventListener('click', function() {
+    //   console.log('print');
+    // });
 
   </script>
 

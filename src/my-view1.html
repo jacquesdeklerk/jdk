@@ -18,6 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+
       .container {
         width: 100%;
         max-width: 1200px;
@@ -26,42 +27,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .container--pad {
-        padding: 0 20px;
+        padding: 0 16px;
         box-sizing: border-box;
       }
 
       .card {
-        width: calc(100% - 48px);
+        width: calc(100% - 32px);
         margin: 16px;
         text-align: left;
       }
-
-      /*.card ul {
-        margin: 0;
-        padding: 20px;
-      }*/
-
 
       paper-progress {
         margin: 20px 0;
         width: 100%;
         --paper-progress-active-color: #00BCD4;
       }
-
-      /*paper-progress.blue {
-        --paper-progress-active-color: var(--paper-light-blue-500);
-        --paper-progress-secondary-color: var(--paper-light-blue-100);
-      }
-
-      paper-progress.red {
-        --paper-progress-active-color: var(--paper-red-500);
-        --paper-progress-secondary-color: var(--paper-red-100);
-      }
-
-      paper-progress.green {
-        --paper-progress-active-color: var(--paper-light-green-500);
-        --paper-progress-secondary-color: var(--paper-light-green-100);
-      }*/
 
       .cardlist {
         list-style: none;
@@ -79,13 +59,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       @media (min-width: 800px) {
         .card {
-          width: calc(49% - 48px);
+          width: calc(49% - 32px);
           vertical-align: top;
         }
       }
 
       @media print {
-        :host {
+        :host,
+        paper-icon-item,
+        paper-item {
           font-size: 9pt;
         }
 
@@ -94,30 +76,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           vertical-align: top;
           box-shadow: none;
           border: 1px solid #eee;
+          margin: 10px;
+        }
+
+        .container {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .container--pad {
+          padding: 0 10px;
         }
       }
     </style>
 
-    <app-header>
-      <app-toolbar>
-        <div class="container container--pad">
-          <paper-icon-item>
-            <iron-icon icon="email" item-icon>
-            </iron-icon>
-            <paper-item-body>
-              <div>jacques.de.klerk@gmail.com</div>
-            </paper-item-body>
-          </paper-icon-item>
-          <paper-icon-item>
-            <iron-icon icon="phone" item-icon>
-            </iron-icon>
-            <paper-item-body>
-              <div>0828115545</div>
-            </paper-item-body>
-          </paper-icon-item>
-        </div>
-      </app-toolbar>
-    </app-header>
 
     <div class="container" style="margin-top:20px">
 
@@ -263,6 +235,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <div>
             <p>
+              Mobile
+            </p>
+            <paper-progress value="700" min="100" max="1000"  class="blue"></paper-progress>
+            <paper-chip label="Ionic">
+            </paper-chip>
+            <paper-chip label="Cordova">
+            </paper-chip>
+          </div>
+
+          <div>
+            <p>
               Relational Databases
             </p>
             <paper-progress value="700" min="100" max="1000"></paper-progress>
@@ -293,7 +276,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <p>
               C++
             </p>
-            <paper-progress value="300" min="100" max="1000"></paper-progress>
+            <paper-progress value="400" min="100" max="1000"></paper-progress>
             <paper-chip label="stdlib"></paper-chip>
           </div>
 

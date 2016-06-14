@@ -254,7 +254,15 @@ Basic chip with single letter instead of an icon
       :host([opened][active]) #chip #label ::content h2 {
         color: var(--paper-chip-active-secondary-text-color, --text-primary-color);
       }
+
+      @media print {
+        :host {
+          font-size: 9pt;
+        }
+      }
     </style>
+
+    
     <paper-material id="shadow" elevation="{{_elevation}}" animated$="{{animated}}">
       <div id="main">
         <div id="chip">

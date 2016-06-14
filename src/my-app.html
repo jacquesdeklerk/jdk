@@ -26,6 +26,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="paper-chip.html">
 <link rel="import" href="my-icons.html">
 <link rel="import" href="my-view1.html">
@@ -57,6 +59,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         z-index: 99;
         background: #fff;
         color: #00BCD4;
+      }
+
+      .header__contact {
+        margin-left: -16px;
+      }
+
+      .paper-item-link {
+        color: #fff;
+        text-decoration: none;
       }
 
       @media print {
@@ -93,10 +104,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </app-toolbar>
         <app-toolbar>
           <div class="container container--pad">
-            <h1 title>Jacques de Klerk</h1>
+            <h1 title>
+              Jacques de Klerk
+              <div bottom-item class="layout horizontal wrap header__contact">
+                <a class="paper-item-link" href="mailto:jacques.de.klerk@gmail.com" tabindex="-1">
+                  <paper-icon-item>
+                    <iron-icon icon="email" item-icon>
+                    </iron-icon>
+                    <paper-item-body>
+                      <div>jacques.de.klerk@gmail.com</div>
+                    </paper-item-body>
+                  </paper-icon-item>
+                </a>
+                <a class="paper-item-link" href="tel:+27828115545" tabindex="-1">
+                  <paper-icon-item>
+                    <iron-icon icon="phone" item-icon>
+                    </iron-icon>
+                    <paper-item-body>
+                      <div>082 811 5545</div>
+                    </paper-item-body>
+                  </paper-icon-item>
+                </a>
+
+              </div>
+            </h1>
           </div>
         </app-toolbar>
-        <app-toolbar class="no-print">
+        <app-toolbar>
         </app-toolbar>
 
         <paper-fab icon="print" title="print" class="fab--header no-print" on-tap="print"></paper-fab>

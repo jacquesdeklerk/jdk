@@ -60,6 +60,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         right: 20px;
         bottom: -28px;
         z-index: 99;
+      }
+
+      .fab--header paper-fab {
         background: #fff;
         color: #00BCD4;
       }
@@ -146,7 +149,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-toolbar class="bottom-bar">
         </app-toolbar>
 
-        <paper-fab icon="download" title="Download" class="fab--header no-print" on-tap="print"></paper-fab>
+        <a href="/downloads/JDK_CV_2016.pdf" class="fab--header no-print" target="_blank">
+          <paper-fab icon="download" title="Download" ></paper-fab>
+        </a>
+
       </app-header>
 
       <my-view1></my-view1>

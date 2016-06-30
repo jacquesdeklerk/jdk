@@ -22,7 +22,9 @@
     "paper-listbox": "polymerelements/paper-listbox#^1.1.2",
     "paper-slider": "PolymerElements/paper-slider#^1.0.11",
     "paper-progress": "PolymerElements/paper-progress#^1.0.9",
-    "paper-fab": "PolymerElements/paper-fab#^1.2.0"
+    "paper-fab": "PolymerElements/paper-fab#^1.2.0",
+    "masonry": "^4.1.0",
+    "masonry-layout": "^1.0.4"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

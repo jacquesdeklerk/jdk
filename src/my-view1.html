@@ -33,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .card {
         width: calc(100% - 32px);
-        margin: 16px;
+        margin-bottom: 32px;
         text-align: left;
       }
 
@@ -75,15 +75,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         clear: both;
       }
 
+      .grid-sizer,
+      .grid-item {
+        width: calc(100% - 32px);
+      }
+
       @media (min-width: 800px) {
         .card {
-          width: calc(50% - 32px);
           vertical-align: top;
-          float: left;
+          /*float: left;*/
+        }
+
+        .grid-sizer,
+        .grid-item {
+          width: calc(50% - 16px);
         }
 
         .card--skills {
-          float: right;
+          /*float: right;*/
         }
       }
 
@@ -94,12 +103,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           font-size: 9pt;
         }
 
+        /*.row {
+          margin-left: -15px;
+          margin-right: -15px;
+        }*/
+
         .card {
           width: calc(49% - 48px);
           vertical-align: top;
           box-shadow: none;
           border: 1px solid #eee;
           margin: 10px;
+        }
+
+        .card-content,
+        .cardlist__item {
+          padding-top: 0;
         }
 
         .container {
@@ -110,298 +129,333 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         .container--pad {
           padding: 0 10px;
         }
+
+
       }
     </style>
 
 
     <div class="container clearfix" style="margin-top:20px">
 
-      <paper-card heading="Profile" class="card">
-        <div class="card-content">
-          <ul>
-            <li>Specialising in front-end development</li>
-            <li>10 years experience</li>
-            <li>Self-starter</li>
-            <li>Currently completing BSc Computer Science degree (2nd year)</li>
-            <li>35 years old</li>
-            <li>Bilingual with good communication skills</li>
-            <li>Have worked on diverse projects with involvement in all aspects, from conceptualisation and deployment to support</li>
-          </ul>
-        </div>
-      </paper-card>
+      <div class="row grid" id="grid">
 
-      <paper-card heading="Objective" class="card">
-        <div class="card-content">
-          <p>
-            Seeking a new challenge where I can learn from and contribute to a
-            team environment within a world class organisation.
-          </p>
-          <p>
-            Looking for a long-term position within a company that offers personal
-            growth opportunities.
-          </p>
-          <p>
-            My passion for learning means that I can continually offer the latest technology,
-            practices and ideas to the team, ensuring the organisation is at the
-            very forefront of user experiences.
-          </p>
+        <div class="grid-sizer"></div>
 
-        </div>
-      </paper-card>
+        <paper-card heading="Profile" class="card grid-item">
+          <div class="card-content">
+            <ul>
+              <li>Specialising in front-end development</li>
+              <li>10 years experience</li>
+              <li>
+                Currently working at a User Experience Design agency
+              </li>
+              <li>Self-starter</li>
+              <li>Currently completing BSc Computer Science degree (2nd year) through UNISA</li>
+              <li>35 years old</li>
+              <li>Bilingual with good communication skills</li>
+              <li>Have worked on diverse projects with involvement in all aspects, from conceptualisation and deployment to support</li>
+            </ul>
+          </div>
+        </paper-card>
 
-      <!-- EXPERIENCE -->
-      <paper-card heading="Experience" class="card">
-        <ul class="cardlist">
-          <li class="cardlist__item">
-            <h4><i>September 2013 - Present</i></h4>
-            <h4>Front-end Developer (Origin Interactive)</h4>
-
+        <paper-card heading="Objective" class="card grid-item">
+          <div class="card-content">
             <p>
-              Responsibilities:
-              <ul>
-                <li>Lead Developer</li>
-                <li>Analysis of technical requirements</li>
-                <li>System architectural design</li>
-                <li>Scoping of work</li>
-                <li>Development of responsive web applications</li>
-                <li>Linux administation</li>
-                <li>Project delivery</li>
-                <li>Client support</li>
-              </ul>
+              Seeking a new challenge where I can learn from and contribute to a
+              team environment within an established and dynamic organisation.
             </p>
-          </li>
+            <p>
+              Looking for a long-term position within a company that offers personal
+              growth opportunities.
+            </p>
+            <p>
+              My passion for learning means that I can continually offer the latest technology,
+              practices and ideas to the team, thereby contributing valuable skills to any organisation.
+            </p>
 
+          </div>
+        </paper-card>
+
+        <!-- EXPERIENCE -->
+        <paper-card heading="Experience" class="card grid-item">
+          <ul class="cardlist">
             <li class="cardlist__item">
-              <h4><i>2007 - 2013</i></h4>
-              <h4>Web Developer (Freelance)</h4>
+              <h4><i>September 2013 - Present</i></h4>
+              <h4>Front-end Developer (Origin Interactive)</h4>
+
               <p>
                 Responsibilities:
                 <ul>
-                  <li>Development of Websites, Flex Applications, Blogs</li>
-                  <li>Project management</li>
-                  <li>Hosting setup</li>
-                  <li>Technical support</li>
+                  <li>Lead Developer</li>
+                  <li>Analysis of technical requirements</li>
+                  <li>System architectural design</li>
+                  <li>
+                    Translating User Experience Design into front-end interfaces
+                  </li>
+                  <li>Scoping of work</li>
+                  <li>Development of responsive web applications</li>
+                  <li>Linux administration</li>
+                  <li>Project delivery</li>
+                  <li>Client support</li>
+                  <li>Database Administration</li>
                 </ul>
               </p>
             </li>
-          </ul>
-      </paper-card>
+
+              <li class="cardlist__item">
+                <h4><i>2007 - 2013</i></h4>
+                <h4>Web Developer (Freelance)</h4>
+                <p>
+                  Responsibilities:
+                  <ul>
+                    <li>Development of Websites and Flex Applications</li>
+                    <li>Project management</li>
+                    <li>Hosting setup</li>
+                    <li>Technical support</li>
+                  </ul>
+                </p>
+              </li>
+            </ul>
+        </paper-card>
 
 
 
-      <!-- SKILLS -->
-      <paper-card heading="Skills" class="card card--skills">
-        <div class="card-content">
-          <div>
-            <p>
-              JavaScript
-            </p>
-            <paper-progress value="800" min="100" max="1000" class="red"></paper-progress>
-            <paper-chip label="Angular.js">
-            </paper-chip>
-            <paper-chip label="jQuery">
-            </paper-chip>
-            <paper-chip label="Node.js">
-            </paper-chip>
-            <paper-chip label="ES2015">
-            </paper-chip>
-            <paper-chip label="Polymer">
-            </paper-chip>
+        <!-- SKILLS -->
+        <paper-card heading="Skills &amp; Technologies" class="card card--skills grid-item">
+          <div class="card-content">
+            <div>
+              <p>
+                JavaScript
+              </p>
+              <paper-progress value="800" min="100" max="1000" class="red"></paper-progress>
+              <paper-chip label="Angular.js">
+              </paper-chip>
+              <paper-chip label="jQuery">
+              </paper-chip>
+              <paper-chip label="Node.js">
+              </paper-chip>
+              <paper-chip label="ES2015">
+              </paper-chip>
+              <paper-chip label="Polymer">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                CSS
+              </p>
+              <paper-progress value="980" min="100" max="1000" class="green"></paper-progress>
+              <paper-chip label="SASS/SCSS">
+              </paper-chip>
+              <paper-chip label="LESS">
+              </paper-chip>
+              <paper-chip label="CSS3">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                Task Automation
+              </p>
+              <paper-progress value="980" min="100" max="1000" class="green"></paper-progress>
+              <paper-chip label="Gulp">
+              </paper-chip>
+              <paper-chip label="Grunt">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                Markup and Templating
+              </p>
+              <paper-progress value="999" min="100" max="1000"  class="blue"></paper-progress>
+              <paper-chip label="Html5">
+              </paper-chip>
+              <paper-chip label="Markdown">
+              </paper-chip>
+              <paper-chip label="Polymer">
+              </paper-chip>
+              <paper-chip label="Jade">
+              </paper-chip>
+              <paper-chip label="Handlebars">
+              </paper-chip>
+              <paper-chip label="Liquid/Twig">
+              </paper-chip>
+              <paper-chip label="Blade">
+              </paper-chip>
+              <!-- <paper-chip label="ThymeLeaf">
+              </paper-chip> -->
+            </div>
+
+            <div>
+              <p>
+                PHP
+              </p>
+              <paper-progress value="700" min="100" max="1000"  class="blue"></paper-progress>
+              <paper-chip label="Laravel">
+              </paper-chip>
+              <paper-chip label="Wordpress">
+              </paper-chip>
+              <paper-chip label="Drupal">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                Mobile
+              </p>
+              <paper-progress value="700" min="100" max="1000"  class="blue"></paper-progress>
+              <paper-chip label="Ionic">
+              </paper-chip>
+              <paper-chip label="Cordova">
+              </paper-chip>
+            </div>
+
+            <div>
+              <p>
+                Relational &amp; NoSQL Databases
+              </p>
+              <paper-progress value="600" min="100" max="1000"></paper-progress>
+              <paper-chip label="MySQL">
+              </paper-chip>
+              <paper-chip label="MongoDB">
+            </div>
+
+            <!-- <div>
+              <p>
+                NoSQL Databases
+              </p>
+              <paper-progress value="650" min="100" max="1000"></paper-progress>
+              <paper-chip label="MongoDB">
+              </paper-chip>
+            </div> -->
+
+            <div>
+              <p>
+                Version Control
+              </p>
+              <paper-progress value="800" min="100" max="1000"></paper-progress>
+              <paper-chip label="Git"></paper-chip>
+              <paper-chip label="GitHub"></paper-chip>
+              <paper-chip label="Bitbucket"></paper-chip>
+            </div>
+
+            <div>
+              <p>
+                C++
+              </p>
+              <paper-progress value="400" min="100" max="1000"></paper-progress>
+              <paper-chip label="stdlib"></paper-chip>
+            </div>
+
+            <!-- <div>
+              <p>
+                Java
+              </p>
+              <paper-progress value="300" min="100" max="1000"></paper-progress>
+              <paper-chip label="Java EE"></paper-chip>
+              <paper-chip label="Spring MVC"></paper-chip>
+              <paper-chip label="ThymeLeaf Templating"></paper-chip>
+            </div> -->
+
+            <div>
+              <p>
+                Data-interchange
+              </p>
+              <paper-progress value="900" min="100" max="1000"></paper-progress>
+              <paper-chip label="JSON"></paper-chip>
+              <paper-chip label="XML"></paper-chip>
+            </div>
+
+
           </div>
-
-          <div>
-            <p>
-              CSS
-            </p>
-            <paper-progress value="980" min="100" max="1000" class="green"></paper-progress>
-            <paper-chip label="SASS/SCSS">
-            </paper-chip>
-            <paper-chip label="LESS">
-            </paper-chip>
-            <paper-chip label="CSS3">
-            </paper-chip>
-          </div>
-
-          <div>
-            <p>
-              Markup and Templating
-            </p>
-            <paper-progress value="999" min="100" max="1000"  class="blue"></paper-progress>
-            <paper-chip label="Html5">
-            </paper-chip>
-            <paper-chip label="Polymer">
-            </paper-chip>
-            <paper-chip label="Jade">
-            </paper-chip>
-            <paper-chip label="Handlebars">
-            </paper-chip>
-            <paper-chip label="Liquid/Twig">
-            </paper-chip>
-            <paper-chip label="Blade">
-            </paper-chip>
-            <paper-chip label="ThymeLeaf">
-            </paper-chip>
-          </div>
-
-          <div>
-            <p>
-              PHP
-            </p>
-            <paper-progress value="700" min="100" max="1000"  class="blue"></paper-progress>
-            <paper-chip label="Laravel">
-            </paper-chip>
-            <paper-chip label="Wordpress">
-            </paper-chip>
-            <paper-chip label="Drupal">
-            </paper-chip>
-          </div>
-
-          <div>
-            <p>
-              Mobile
-            </p>
-            <paper-progress value="700" min="100" max="1000"  class="blue"></paper-progress>
-            <paper-chip label="Ionic">
-            </paper-chip>
-            <paper-chip label="Cordova">
-            </paper-chip>
-          </div>
-
-          <div>
-            <p>
-              Relational Databases
-            </p>
-            <paper-progress value="700" min="100" max="1000"></paper-progress>
-            <paper-chip label="MySQL">
-            </paper-chip>
-          </div>
-
-          <div>
-            <p>
-              NoSQL Databases
-            </p>
-            <paper-progress value="700" min="100" max="1000"></paper-progress>
-            <paper-chip label="MongoDB">
-            </paper-chip>
-          </div>
-
-          <div>
-            <p>
-              Version Control
-            </p>
-            <paper-progress value="800" min="100" max="1000"></paper-progress>
-            <paper-chip label="Git"></paper-chip>
-            <paper-chip label="GitHub"></paper-chip>
-            <paper-chip label="Bitbucket"></paper-chip>
-          </div>
-
-          <div>
-            <p>
-              C++
-            </p>
-            <paper-progress value="400" min="100" max="1000"></paper-progress>
-            <paper-chip label="stdlib"></paper-chip>
-          </div>
-
-          <div>
-            <p>
-              Java
-            </p>
-            <paper-progress value="300" min="100" max="1000"></paper-progress>
-            <paper-chip label="Java EE"></paper-chip>
-            <paper-chip label="Spring MVC"></paper-chip>
-            <paper-chip label="ThymeLeaf Templating"></paper-chip>
-          </div>
-
-          <div>
-            <p>
-              Data-interchange
-            </p>
-            <paper-progress value="900" min="100" max="1000"></paper-progress>
-            <paper-chip label="JSON"></paper-chip>
-            <paper-chip label="XML"></paper-chip>
-          </div>
+        </paper-card>
 
 
-        </div>
-      </paper-card>
-
-
-      <!-- EDUCATION -->
-      <paper-card heading="Education" class="card">
-        <paper-listbox>
-          <paper-item>
-            BSc (Computer Science), UNISA: 2015 - Present
-          </paper-item>
-          <paper-item>
-            BCom (Marketing Management), University of Pretoria: Completed 2006
-          </paper-item>
-          <paper-item>
-            Matric, Evander High School: 1999
-          </paper-item>
-
-        </paper-listbox>
-      </paper-card>
-
-
-      <paper-card heading="Software" class="card">
-        <div class="card-content">
-          <paper-chip label="Atom">
-          </paper-chip>
-          <paper-chip label="Sublime Text">
-          </paper-chip>
-          <paper-chip label="Visual Studio Code">
-          </paper-chip>
-          <paper-chip label="Eclipse">
-          </paper-chip>
-          <paper-chip label="CodeBlocks">
-          </paper-chip>
-          <paper-chip label="Photoshop">
-          </paper-chip>
-          <paper-chip label="Illustrator">
-          </paper-chip>
-          <paper-chip label="Dreamweaver">
-          </paper-chip>
-          <paper-chip label="Flash">
-          </paper-chip>
-        </div>
-      </paper-card>
-
-
-      <!-- REFERENCES -->
-      <paper-card heading="References" class="card">
-        <div class="card-content">
-          Available on request
-        </div>
-      </paper-card>
-
-
-      <!-- CONTACT -->
-      <paper-card heading="Contact" class="card">
-        <div class="card-content">
-
+        <!-- EDUCATION -->
+        <paper-card heading="Education" class="card grid-item">
           <paper-listbox>
+            <paper-item>
+              BSc (Computer Science), UNISA: 2015 - Present
+            </paper-item>
+            <paper-item>
+              BCom (Marketing Management), University of Pretoria: Completed 2006
+            </paper-item>
+            <paper-item>
+              Matric, Evander High School: 1999
+            </paper-item>
 
-            <paper-icon-item>
-              <iron-icon icon="phone" item-icon>
-              </iron-icon>
-              <paper-item-body two-line>
-                <div>082 811 5545</div>
-                <div secondary>Mobile</div>
-              </paper-item-body>
-            </paper-icon-item>
-
-            <paper-icon-item>
-              <iron-icon icon="email" item-icon>
-              </iron-icon>
-              <paper-item-body>
-                <div>jacques.de.klerk@gmail.com</div>
-              </paper-item-body>
-            </paper-icon-item>
           </paper-listbox>
+        </paper-card>
 
-        </div>
-      </paper-card>
+
+        <paper-card heading="Software" class="card grid-item">
+          <div class="card-content">
+            <paper-chip label="Atom">
+            </paper-chip>
+            <paper-chip label="Sublime Text">
+            </paper-chip>
+            <paper-chip label="Visual Studio Code">
+            </paper-chip>
+            <paper-chip label="Eclipse">
+            </paper-chip>
+            <paper-chip label="CodeBlocks">
+            </paper-chip>
+            <paper-chip label="Photoshop">
+            </paper-chip>
+            <paper-chip label="Illustrator">
+            </paper-chip>
+            <paper-chip label="Dreamweaver">
+            </paper-chip>
+            <paper-chip label="Flash">
+            </paper-chip>
+            <paper-chip label="Microsoft Windows">
+            </paper-chip>
+            <paper-chip label="Mac OSX">
+            </paper-chip>
+            <paper-chip label="Linux (Ubuntu)">
+            </paper-chip>
+            <paper-chip label="Microsoft Office">
+            </paper-chip>
+          </div>
+        </paper-card>
+
+
+        <!-- REFERENCES -->
+        <paper-card heading="References" class="card grid-item">
+          <div class="card-content">
+            Available on request
+          </div>
+        </paper-card>
+
+
+        <!-- CONTACT -->
+        <paper-card heading="Contact" class="card grid-item">
+          <div class="card-content">
+
+            <paper-listbox>
+
+              <paper-icon-item>
+                <iron-icon icon="phone" item-icon>
+                </iron-icon>
+                <paper-item-body two-line>
+                  <div>082 811 5545</div>
+                  <div secondary>Mobile</div>
+                </paper-item-body>
+              </paper-icon-item>
+
+              <paper-icon-item>
+                <iron-icon icon="email" item-icon>
+                </iron-icon>
+                <paper-item-body>
+                  <div>jacques.de.klerk@gmail.com</div>
+                </paper-item-body>
+              </paper-icon-item>
+            </paper-listbox>
+
+          </div>
+        </paper-card>
+      </div>
 
     </div>
 
@@ -411,9 +465,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     Polymer({
 
-      is: 'my-view1'
+      is: 'my-view1',
+      ready: function() {
+        var elem = this.$$('.grid');
+        var msnry = new Masonry( elem, {
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: '.grid-sizer',
+          percentPosition: true,
+          gutter: 32
+        });
+
+        setTimeout(function() {
+          msnry.layout();
+        }, 500);
+
+      }
 
     });
+
+
 
   </script>
 

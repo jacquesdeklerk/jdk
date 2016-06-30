@@ -32,6 +32,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="my-icons.html">
 <link rel="import" href="my-view1.html">
 
+<script src="/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+
 <dom-module id="my-app">
 
   <template>
@@ -48,6 +50,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: var(--app-primary-color);
         color: #fff;
       }
+
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
@@ -77,11 +80,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       @media print {
         app-header {
-          position: absolute;
+          position: relative !important;
+          margin-bottom: -316px;
         }
 
         .fab--header {
           display: none;
+        }
+
+        .bottom-bar {
+          height: 26px;
         }
 
         .no-print {
@@ -135,10 +143,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </h1>
           </div>
         </app-toolbar>
-        <app-toolbar>
+        <app-toolbar class="bottom-bar">
         </app-toolbar>
 
-        <paper-fab icon="print" title="print" class="fab--header no-print" on-tap="print"></paper-fab>
+        <paper-fab icon="download" title="Download" class="fab--header no-print" on-tap="print"></paper-fab>
       </app-header>
 
       <my-view1></my-view1>
@@ -168,7 +176,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ],
 
       print: function() {
-        window.print()
+        //window.print()
+        window.open('downloads/JDK_CV_2016.pdf')
       },
 
       _routePageChanged: function(page) {
